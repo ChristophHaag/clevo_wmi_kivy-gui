@@ -14,58 +14,63 @@
                 Label:
                     text:"Green"
                 CheckBox:
-                    #active:root.leftG
                     active:root.currentcolors.leftG
-                    #active:root.currentcolors.left["G"]
+                    whoami:{"area": "left", "color": "G"}
+                    on_active:root.color_change(*args)
                 Label:
                     text:"Red"
                 CheckBox
-                    #active:root.leftR
                     active:root.currentcolors.leftR
-                    #active:root.currentcolors.left["R"]
+                    whoami:{"area": "left", "color": "R"}
+                    on_active:root.color_change(*args)
                 Label:
                     text:"Blue"
                 CheckBox
-                    #active:root.leftB
                     active:root.currentcolors.leftB
-                    #active:root.currentcolors.left["B"]
+                    whoami:{"area": "left", "color": "B"}
+                    on_active:root.color_change(*args)
 
             GridLayout:
                 cols:2
                 Label:
                     text:"Green"
                 CheckBox
-                    #active:root.middleG
-                    active:root.currentcolors["middleG"]
+                    active:root.currentcolors.middleG
+                    whoami:{"area": "middle", "color": "G"}
+                    on_active:root.color_change(*args)
                 Label:
                     text:"Red"
                 CheckBox
-                    #active:root.middleR
-                    active:root.currentcolors["middleR"]
+                    active:root.currentcolors.middleR
+                    whoami:{"area": "middle", "color": "R"}
+                    on_active:root.color_change(*args)
                 Label:
                     text:"Blue"
                 CheckBox
-                    #active:root.middleB
-                    active:root.currentcolors["middleB"]
+                    active:root.currentcolors.middleB
+                    whoami:{"area": "middle", "color": "B"}
+                    on_active:root.color_change(*args)
 
             GridLayout:
                 cols:2
                 Label:
                     text:"Green"
                 CheckBox
-                    #active:root.rightG
-                    active:root.currentcolors["rightG"]
+                    active:root.currentcolors.rightG
+                    whoami:{"area": "right", "color": "G"}
+                    on_active:root.color_change(*args)
                 Label:
                     text:"Red"
                 CheckBox
-                    #active:root.rightR
-                    active:root.currentcolors["rightR"]
+                    active:root.currentcolors.rightR
+                    whoami:{"area": "right", "color": "R"}
+                    on_active:root.color_change(*args)
                 Label:
                     text:"Blue"
                 CheckBox
-                    #active:root.rightB
-                    active:root.currentcolors["rightB"]
-
+                    active:root.currentcolors.rightB
+                    whoami:{"area": "right", "color": "B"}
+                    on_active:root.color_change(*args)
 
         GridLayout:
             cols:1

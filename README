@@ -8,4 +8,4 @@ The module requires to echo a 3-bit string like "010" to /sys/devices/platform/c
 Plans for this GUI:
 Tray
 Save/Load Config
-Actually do anything
+Do the stuff in a maintainable way
