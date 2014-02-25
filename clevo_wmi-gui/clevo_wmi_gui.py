@@ -93,5 +93,5 @@ class Clevo_WMI_GUI(App):
     def build(self):
         return MainScreen()
 
-
-Clevo_WMI_GUI().run()
+if __name__ == '__main__':
+    Clevo_WMI_GUI().run()
