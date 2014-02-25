@@ -73,7 +73,9 @@
                 orientation:"horizontal"
                 Label:
                     text:"Brightness"
+                Slider
                     min:0
                     max:10
-                    #value:10
-                Slider
+                    step: 1
+                    value:root.brightness
+                    on_value:root.brightness_change(*args)

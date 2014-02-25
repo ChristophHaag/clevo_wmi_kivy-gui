@@ -1,5 +1,5 @@
 from kivy.app import App
-from kivy.properties import DictProperty
+from kivy.properties import DictProperty, NumericProperty
 from kivy.uix.floatlayout import FloatLayout
 
 
@@ -7,6 +7,12 @@ def readfile(f):
     with open(f, "rb") as fi:
         return fi.read().decode("UTF-8").strip()
 
+def writefile(f, val):
+    with open(f, "wb") as fi:
+        try:
+            fi.write(bytes(val, "UTF-8"))
+        except Exception as e:
+            print("Error while writing: ", e)
 
 areas = ["left", "right", "middle"]
 
@@ -15,7 +21,6 @@ COLORS = {a: {"file": "/sys/devices/platform/clevo_wmi/kbled/" + a,
               "R": 0, "G": 0, "B": 0} for a in areas}
 ORDER = ["G", "R", "B"]
 
-brightness = readfile(BRIGHTNESS)
 colors = dict()
 for a in COLORS:
     rgb = readfile(COLORS[a]["file"])
@@ -26,6 +31,13 @@ for a in COLORS:
 
 class MainScreen(FloatLayout):
     currentcolors = DictProperty() #TODO how to use nested dict properties? AliasProperty doesn't have documentation nor examples???
+    brightness = NumericProperty()
+
+
+    def brightness_change(self, _, val):
+        i = str(int(val))
+        print("set brightness to " + i)
+        writefile(BRIGHTNESS, i)
 
     def on_currentcolors(self):
         print ("mee")
@@ -34,7 +46,7 @@ class MainScreen(FloatLayout):
         for a in areas:
             for i in ORDER:
                 self.currentcolors[a + i] = True if COLORS[a][i] else False
-
+        self.brightness = int(readfile(BRIGHTNESS))
         # first build the color stuff above and only then initialize the gui
         super(MainScreen, self).__init__(**kwargs)
 
