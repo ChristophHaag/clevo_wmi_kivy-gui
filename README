@@ -1,0 +1,11 @@
+This is a GUI for Clevo Notebooks with a backlit keyboard with controllable LEDs.
+
+It requires kivy for python 3 (python 2 probably works too) and this kernel module: http://sourceforge.net/projects/clevo-wmi/
+
+Why a GUI?
+The module requires to echo a 3-bit string like "010" to /sys/devices/platform/clevo_wmi/kbled/{left,middle,right} and it isn't even sorted as RGB.
+
+Plans for this GUI:
+Tray
+Save/Load Config
+Actually do anything
