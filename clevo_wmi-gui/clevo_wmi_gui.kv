@@ -14,63 +14,54 @@
                 Label:
                     text:"Green"
                 CheckBox:
-                    active:root.currentcolors.leftG
-                    whoami:{"area": "left", "color": "G"}
-                    on_active:root.color_change(*args)
+                    active: root.hw.getcolor("left").getcomponent("G")
+                    on_active:root.color_change("left", "G", *args)
                 Label:
                     text:"Red"
                 CheckBox
-                    active:root.currentcolors.leftR
-                    whoami:{"area": "left", "color": "R"}
-                    on_active:root.color_change(*args)
+                    active: root.hw.getcolor("left").getcomponent("R")
+                    on_active:root.color_change("left", "R", *args)
                 Label:
                     text:"Blue"
                 CheckBox
-                    active:root.currentcolors.leftB
-                    whoami:{"area": "left", "color": "B"}
-                    on_active:root.color_change(*args)
+                    active: root.hw.getcolor("left").getcomponent("B")
+                    on_active:root.color_change("left", "B", *args)
 
             GridLayout:
                 cols:2
                 Label:
                     text:"Green"
                 CheckBox
-                    active:root.currentcolors.middleG
-                    whoami:{"area": "middle", "color": "G"}
-                    on_active:root.color_change(*args)
+                    active: root.hw.getcolor("middle").getcomponent("G")
+                    on_active:root.color_change("middle", "G", *args)
                 Label:
                     text:"Red"
                 CheckBox
-                    active:root.currentcolors.middleR
-                    whoami:{"area": "middle", "color": "R"}
-                    on_active:root.color_change(*args)
+                    active: root.hw.getcolor("middle").getcomponent("R")
+                    on_active:root.color_change("middle", "R", *args)
                 Label:
                     text:"Blue"
                 CheckBox
-                    active:root.currentcolors.middleB
-                    whoami:{"area": "middle", "color": "B"}
-                    on_active:root.color_change(*args)
+                    active: root.hw.getcolor("middle").getcomponent("B")
+                    on_active:root.color_change("middle", "B", *args)
 
             GridLayout:
                 cols:2
                 Label:
                     text:"Green"
                 CheckBox
-                    active:root.currentcolors.rightG
-                    whoami:{"area": "right", "color": "G"}
-                    on_active:root.color_change(*args)
+                    active: root.hw.getcolor("right").getcomponent("G")
+                    on_active:root.color_change("right", "G", *args)
                 Label:
                     text:"Red"
                 CheckBox
-                    active:root.currentcolors.rightR
-                    whoami:{"area": "right", "color": "R"}
-                    on_active:root.color_change(*args)
+                    active: root.hw.getcolor("right").getcomponent("R")
+                    on_active:root.color_change("right", "R", *args)
                 Label:
                     text:"Blue"
                 CheckBox
-                    active:root.currentcolors.rightB
-                    whoami:{"area": "right", "color": "B"}
-                    on_active:root.color_change(*args)
+                    active: root.hw.getcolor("right").getcomponent("B")
+                    on_active:root.color_change("right", "B", *args)
 
         GridLayout:
             cols:1
@@ -82,5 +73,5 @@
                     min:0
                     max:10
                     step: 1
-                    value:root.brightness
+                    value:root.hw.getBrightness()
                     on_value:root.brightness_change(*args)
